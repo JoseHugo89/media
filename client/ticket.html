@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+    <div class="ticket">
+    <div class="ticket" id="ticket">
+        <img src="https://runway7.fashion/wp-content/uploads/2024/07/R7FEMAIL.png" alt="Logo">
+        <h1>VIDEOGRAPHERS & PHOTOGRAPHERS INQUIRY</h1>
+        <p><strong>Date:</strong> September 4th-8th</p>
+        <div class="details">
+            <div><strong>Full Name:</strong> <span id="fullName"></span></div>
+            <div><strong>Email:</strong> <span id="emailAddress"></span></div>
+            <div><strong>Phone:</strong> <span id="phoneNumber"></span></div>
+            <div><strong>Type:</strong> <span id="type"></span></div>
+            <div><strong>Instagram Username:</strong> <span id="instagramUsername"></span></div>
+            <div><strong>Day:</strong> <span id="day"></span></div>
+            <div><strong>Time:</strong> <span id="time"></span></div>
+        </div>
+        <div class="qr-code">
+            <img id="qrCode" src="" alt="QR Code">
+        </div>
+        <button onclick="sendEmail()">Send Ticket</button>
+    </div>
+</div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script>
+        function populateTicket(data) {
+            document.getElementById('fullName').innerText = data.fullName;
+            document.getElementById('emailAddress').innerText = data.emailAddress;
+            document.getElementById('phoneNumber').innerText = data.phoneNumber;
+            document.getElementById('type').innerText = data.type;
+            document.getElementById('instagramUsername').innerText = data.instagramUsername;
+            document.getElementById('day').innerText = data.day;
+            document.getElementById('time').innerText = data.time;
+
+            // Generar y mostrar el código QR
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(`Name: ${data.fullName}, Email: ${data.emailAddress}, Phone: ${data.phoneNumber}, Type: ${data.type}, Instagram: ${data.instagramUsername}, Day: ${data.day}, Time: ${data.time}`)}`;
+            document.getElementById('qrCode').src = qrUrl;
+        }
+
+        function sendEmail() {
+            html2canvas(document.getElementById('ticket')).then(canvas => {
+                const imgData = canvas.toDataURL('image/jpeg');
+                const link = document.createElement('a');
+                link.href = imgData;
+                link.download = 'ticket.jpg';
+                link.click();
+
+                // Aquí puedes agregar código para enviar la imagen por correo usando un script del lado del servidor
+            });
+        }
+
+        // Datos simulados, reemplazar con datos reales
+        const data = {
+            fullName: 'John Doe',
+            emailAddress: 'john.doe@example.com',
+            phoneNumber: '123-456-7890',
+            type: 'Photographer',
+            instagramUsername: 'johndoe',
+            day: '4TH',
+            time: '1pm'
+        };
+        
+        populateTicket(data);
+    </script>
+</body>
+</html>

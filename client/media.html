@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Media</title>
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <button class="navbar-btn" onclick="window.location.href='/scanner.html';">QR Scanner</button>
+        </div>
+        <div class="navbar-right">
+            <a href="login.html" class="navbar-link">Login</a>
+            <a href="/register.html" class="navbar-link">Register</a>
+            <a href="/media.html" class="navbar-link">Participants</a>
+        </div>
+    </div>
+    
+    <div id="mediaList" class="media-list-container">
+        <h1>Registered Media</h1>
+        <div id="mediaList"></div>
+    </div>
+
+    <!-- Contenedor para el modal de QR -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span> <!-- Botón para cerrar el modal -->
+            <img id="modalImg" src="" alt="QR Code">
+        </div>
+    </div>
+
+    <script src="media.js"></script>
+</body>
+</html>

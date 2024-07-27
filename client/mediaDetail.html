@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Details</title>
+    <link rel="stylesheet" href="media.css">
+    <style>
+           @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+        body {
+            font-family: Outfit, sans-serif; /* Fuente para el resto del texto */
+        }
+
+        #mediaDetails {
+            width: 480px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Outfit, sans-serif; /* Fuente para los detalles del medio */
+        }
+
+        #mediaDetails h1 {
+            font-family: Playfair Display, serif; /* Fuente para NYFW */
+            font-size: 8vw; /* Tamaño de fuente relativo al ancho del contenedor */
+            margin: 0;
+            margin-top: 20px;
+            line-height: 0.5; /* Ajustar la altura de la línea para que el texto esté pegado */
+            text-align: center;
+        }
+
+        #mediaDetails h2 {
+            font-family: Playfair Display, serif; /* Fuente para 2024 */
+            font-size: 10vw; /* Tamaño de fuente relativo al ancho del contenedor */
+            margin: 0;
+            line-height: 0.5; /* Ajustar la altura de la línea para que el texto esté pegado */
+            text-align: center;
+        }
+        #mediaDetails h3 {
+            font-size: 40px; 
+            margin: 0;
+            text-align: center;
+            margin: 20px;
+        }
+
+
+        #mediaDetails .data-container {
+            text-align: left;
+            margin-top: 70px; /* Espacio adicional entre el título y los detalles */
+        }
+
+        #mediaDetails .data-container p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        #mediaDetails .participation-number {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo del QR Code */
+        .qr-code-container {
+            margin-top: 20px;
+            text-align: center; /* Centrar el QR Code */
+        }
+
+        .qr-img {
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Estilo del botón */
+        .register-button {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 12px; /* Bordes redondeados */
+            padding: 10px 20px;
+            font-family: Outfit, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto; /* Centrado */
+        }
+
+        .register-button:hover {
+            background-color: #333; /* Color de fondo al pasar el ratón */
+        }
+
+            /* Estilo del pie de página */
+            .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFF;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #333;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .media-details-container {
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido esté en columnas */
+}
+
+.data-container {
+    margin-bottom: 20px;
+}
+
+.qr-and-logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qr-code-container {
+    margin-right: auto; /* Alinea el QR code a la izquierda */
+}
+
+.logo-container {
+    margin-left: auto; /* Alinea el logo a la derecha */
+}
+
+.qr-img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.logo-img {
+    height: 100px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-left">
+            <button class="navbar-btn" onclick="window.location.href='/scanner.html';">QR Scanner</button>
+        </div>
+        <div class="navbar-right">
+            <a href="/login.html" class="navbar-link">Login</a>
+            <a href="/register.html" class="navbar-link">Register</a>
+            <a href="/media.html" class="navbar-link">Participants</a>
+        </div>
+    </div>
+    <div id="mediaDetails">
+        <!-- Información del ticket -->
+        <h1>NYFW</h1>
+        <h2>2024</h2>
+        <!-- Aquí se insertarán los detalles del medio -->
+    </div>
+    <div class="footer">
+        EVENT LOCATION: PARAMOUNT HOTEL 235 W 46TH STREET, NEW YORK, NY 10036<br>
+        10 Times Square, Suite 5049<br>
+        New York, NY 10018<br>
+        reservations@runway7fashion.com<br>
+        Copyright © 2024 Runway 7 Fashion, All rights reserved.
+    </div>
+
+    <script src="mediaDetail.js"></script>
+</body>
+</html>
